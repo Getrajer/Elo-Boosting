@@ -120,6 +120,8 @@ abbr[data-original-title] {
   text-decoration-skip-ink: none;
 }
 
+
+
 address {
   margin-bottom: 1rem;
   font-style: normal;
@@ -378,7 +380,6 @@ template {
 [hidden] {
   display: none !important;
 }
-
 h1,
 h2,
 h3,
@@ -10697,12 +10698,8 @@ body {
 
 .about-section {
   padding-top: 10rem;
-  background: linear-gradient(
-    to bottom,
-    #000000 0%,
-    rgba(0, 0, 0, 0.9) 75%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+  background:black;
+  
 }
 .about-section p {
   margin-bottom: 5rem;
@@ -10804,3 +10801,174 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
+
+
+/*Form Elo Boost*/
+.elo_boosting_form{
+  display: flex;
+  justify-content: center;
+  background-image: url(../assets/img/form_background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.elo_boosting_form .elo_boosting_form_container{
+  width: 100%;
+  max-width: 1200px;
+  background-color: #2e0e21c7;
+  padding: 3em 0;
+  color: white;
+}
+
+.elo_boosting_form .title{
+  text-align: center;
+}
+
+.elo_boosting_form .title h2{
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.elo_boosting_form .form_split{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.elo_boosting_form .diwizje{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3em 2em;
+  text-align: center;
+}
+
+.elo_boosting_form .diwizje img{
+  width: 200px;
+  height: 210px;
+  padding: 0.5em 0;
+}
+
+.elo_boosting_form h3{
+  padding: 1em 0;
+  font-weight: 600;
+}
+
+.elo_boosting_form .less_lp{
+  text-align: center;
+  padding: 3em 0 0 0;
+  grid-column: span 2;
+}
+
+.elo_boosting_form .less_lp input{
+  padding: 0.3em;
+}
+
+.elo_boosting_form .contact_form{
+  padding: 3em 2em;
+}
+
+.elo_boosting_form .form_box{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.elo_boosting_form .form_box input{
+  background-color: #2c0f20bb;
+  border: unset;
+  padding: 0.5em;
+  color: white;
+  transition: 0.5s background-color;
+}
+
+.elo_boosting_form .form_box input:focus{
+  outline: unset;
+  background-color: #491734bb;
+}
+
+.elo_boosting_form label{
+  font-weight: 600;
+}
+
+.elo_boosting_form select{
+  background-color: #2c0f20bb;
+  border: unset;
+  padding: 0.5em;
+  color: white;
+  transition: 0.5s background-color;
+}
+
+.elo_boosting_form select:focus{
+  outline: unset;
+  background-color: #491734bb;
+}
+
+.elo_boosting_form input{
+  font-size: 1.2rem;
+}
+
+.elo_boosting_form option{
+  background-color: #2c0f20bb;
+  border: unset;
+  padding: 0.5em;
+  outline: unset;
+  color: white;
+  transition: 0.5s background-color;
+}
+
+.elo_boosting_form option:focus{
+  outline: unset;
+}
+
+.elo_boosting_form option:hover{
+  outline: unset;
+  background-color: #491734bb;
+}
+
+.elo_boosting_form option:checked{
+  background-color: #8d3468bb;
+}
+
+.elo_boosting_form option:valid{
+  background-color: red;
+}
+
+.elo_boosting_form .contact_form h3{
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+.elo_boosting_form .error{
+  height: 20px;
+  padding: 0.2em 0;
+  color: red;
+  grid-column: span 2;
+  text-align: right;
+}
+
+.elo_boosting_form .button_box{
+  grid-column: span 2;
+  text-align: center;
+}
+
+.elo_boosting_form .button_box button{
+  padding: 0.5em 4em;
+  background-color:rgba(85, 41, 67, 0.678);
+  color: white;
+  border: unset;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: 0.5s background-color;
+}
+
+.elo_boosting_form .button_box button:hover{
+  background-color: #491734bb;
+}
+
+.elo_boosting_form .button_box button:focus{
+  outline: unset;
+}
+
+/*End of Form Elo Boost*/

@@ -6,8 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
+    <meta name="description" content="Strona do boostingu" />
+    <meta name="author" content="EloBoost" />
     <title>EloBoost</title>
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -23,6 +23,11 @@
     <link
       href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
       rel="stylesheet"
+    />
+    <!-- CDN-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
@@ -57,6 +62,12 @@
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#signup">Kontakt</a>
             </li>
+            <li class="nav-item-discord-facebook">
+              <a class="mx-2 nav-link js-scroll-trigger "" href="#!"><i class="fab fa-discord"></i></a>
+            </li>
+            <li class="nav-item-discord-facebook">
+              <a class="mx-2 nav-link js-scroll-trigger "" href="#!"><i class="fab fa-facebook-f"></i></a>
+            </li>
           </ul>
         </div>
       </div>
@@ -66,10 +77,12 @@
       <div class="container d-flex h-100 align-items-center">
         <div class="mx-auto text-center">
           <h1 class="mx-auto my-0 text-uppercase">EloBoost</h1>
-          <h2 class="text-white-50 mx-auto mt-2 mb-5">
+          <h2
+            class="text-white-50 mx-auto mt-2 mb-5 animate__animated animate__shakeX"
+          >
             Szybki i skuteczny boosting od zaraz!
           </h2>
-          <a class="btn btn-primary js-scroll-trigger" href="#about"
+          <a class="btn btn-primary js-scroll-trigger" href="#projects"
             >Zakup boosting!</a
           >
         </div>
@@ -89,109 +102,134 @@
             </p>
           </div>
         </div>
-        <img class="img-fluid" src="assets/img/master.png" alt="" />
-        <img class="img-fluid" src="assets/img/grand.png" alt="" />
-        <img class="img-fluid" src="assets/img/chall.png" alt="" />
+        <img
+          class="img-fluid animate__animated animate__backInLeft"
+          src="assets/img/master.png"
+          alt=""
+        />
+        <img
+          class="img-fluid animate__animated animate__backInUp"
+          src="assets/img/chall.png"
+          alt=""
+        />
+        <img
+          class="img-fluid animate__animated animate__backInRight"
+          src="assets/img/grand.png"
+          alt=""
+        />
       </div>
     </section>
 
-    <!-- Projects-->
-    <section class="projects-section bg-light" id="projects">
-      <div class="container">
-        <!-- Featured Project Row-->
-        <div class="row align-items-center no-gutters mb-4 mb-lg-5">
-          <div class="col-xl-8 col-lg-7">
-            <img
-              class="img-fluid mb-3 mb-lg-0"
-              src="assets/img/bg-masthead.jpg"
-              alt=""
-            />
-          </div>
-          <div class="col-xl-4 col-lg-5">
-            <div class="featured-text text-center text-lg-left">
-              <h4>Shoreline</h4>
-              <p class="text-black-50 mb-0">
-                Grayscale is open source and MIT licensed. This means you can
-                use it for any project - even commercial projects! Download it,
-                customize it, and publish your website!
-              </p>
-            </div>
-          </div>
+    <!-- Forma-->
+    
+    <section class="elo_boosting_form">
+      <div class="elo_boosting_form_container">
+        <div class="title">
+          <h2>Zacznijmy współpracę</h2>
         </div>
 
-        <!-- Project One Row-->
-        <div class="row justify-content-center no-gutters mb-5 mb-lg-0">
-          <div class="col-lg-6">
-            <img class="img-fluid" src="assets/img/demo-image-01.jpg" alt="" />
-          </div>
-          <div class="col-lg-6">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div
-                  class="project-text w-100 my-auto text-center text-lg-left"
-                >
-                  <h4 class="text-white">Misty</h4>
-                  <p class="mb-0 text-white-50">
-                    An example of where you can put an image of a project, or
-                    anything else, along with a description.
-                  </p>
-                  <hr class="d-none d-lg-block mb-0 ml-0" />
-                </div>
-              </div>
+
+        <div class="form_split">
+
+          <div class="diwizje">
+            <div class="start_diwizja">
+              <h3>Twoja Dywizja</h3>
+
+              <img id="start_div_img" src="assets/img/Iron.png" alt="iron">
+
+              <select id="startDivision">
+                <option value="Iron">Iron</option>
+                <option value="Bronze">Bronze</option>
+                <option value="Silver">Silver</option>
+                <option value="Gold">Gold</option>
+                <option value="Platinum">Platinum</option>
+                <option value="Diamond">Diamond</option>
+                <option value="Master">Master</option>
+              </select>
+              
+              <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+
+            </div>
+
+            <div class="cel_dywizja">
+              <h3>Pożądana dywizja</h3>
+
+              <img id="goal_div_img" src="assets/img/Iron.png" alt="iron">
+
+              <select id="goalDivision">
+                <option value="Iron">Iron</option>
+                <option value="Bronze">Bronze</option>
+                <option value="Silver">Silver</option>
+                <option value="Gold">Gold</option>
+                <option value="Platinum">Platinum</option>
+                <option value="Diamond">Diamond</option>
+                <option value="Master">Master</option>
+              </select>
+              
+              <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+              
+            </div>
+
+
+            <div class="less_lp">
+              <p>Dostajesz mniej jak 10LP? <br> Zaznacz: </p>
+              <input type="checkbox">
             </div>
           </div>
+
+          <div class="contact_form">
+            <h3>Więcej informacji</h3>
+
+            <div class="form_box">
+              <label>Adres Email</label>
+              <input id="email" onfocusout="checkIfEmailCorrect()">
+              <p id="emailError" class="error"></p>
+            </div>
+
+            <div class="form_box">
+              <label>Potwierdź Adres Email</label>
+              <input id="confirmEmail" onfocusout="checkIfEmailsMatch()">
+              <p id="confirmEmailError" class="error"></p>
+            </div>
+
+            <div class="form_box">
+              <label>Serwer</label>
+              <select>
+                <option value="EUW">EUW</option>
+                <option value="EUNE">EUNE</option>
+              </select>
+              <p class="error"></p>
+            </div>
+
+
+            <div class="form_box">
+              <label>Cena</label>
+              <p id="price">20 ZŁ</p>
+              <p class="error"></p>
+            </div>
+
+            <div class="button_box">
+              <button>Zapłać</button> 
+            </div>
+
+          </div>
+
         </div>
 
-        <!-- Project Two Row-->
-        <div class="row justify-content-center no-gutters">
-          <div class="col-lg-6">
-            <img class="img-fluid" src="assets/img/demo-image-02.jpg" alt="" />
-          </div>
-          <div class="col-lg-6 order-lg-first">
-            <div class="bg-black text-center h-100 project">
-              <div class="d-flex h-100">
-                <div
-                  class="project-text w-100 my-auto text-center text-lg-right"
-                >
-                  <h4 class="text-white">Mountains</h4>
-                  <p class="mb-0 text-white-50">
-                    Another example of a project with its respective
-                    description. These sections work well responsively as well,
-                    try this theme on a small screen!
-                  </p>
-                  <hr class="d-none d-lg-block mb-0 mr-0" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
-    <!-- Signup-->
 
-    <section class="signup-section" id="signup">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-10 col-lg-8 mx-auto text-center">
-            <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-            <h2 class="text-white mb-5">
-              Subskrybuj aby otrzymywać informacje!
-            </h2>
-            <form class="form-inline d-flex">
-              <input
-                class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
-                id="inputEmail"
-                type="email"
-                placeholder="Wpisz adres email..."
-              />
-              <button class="btn btn-primary mx-auto" type="submit">
-                Subskrybuj
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <!-- Contact-->
     <section class="contact-section bg-black">
@@ -251,5 +289,6 @@
     <!-- Core theme JS-->
 
     <script src="js/scripts.js"></script>
+    <script src="js/boostForm.js"></script>
   </body>
 </html>
