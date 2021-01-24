@@ -4,7 +4,10 @@ const ConfirmEmailInput = document.getElementById("confirmEmail");
 const ConfirmEmailError = document.getElementById("confirmEmailError");
 const PriceDisplay = document.getElementById("price");
 const StartDivisionSelectType = document.getElementById("startDivision");
+const StartDivisionSelectValue = document.getElementById("startDivisionSelectValue");
 const EndDivisionSelectType = document.getElementById("goalDivision");
+const EndDivisionSelectValue = document.getElementById("endDivisionSelectValue");
+
 
 
 const reEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -52,91 +55,113 @@ const checkIfEmailsMatch = () =>{
    
 }
 
+
+const calculatePrice = () =>{
+    let startDivisionSelected = parseInt(StartDivisionSelectType.value);
+    let endDivisionSelected = parseInt(EndDivisionSelectType.value);
+
+    console.log(startDivisionSelected + " | " + endDivisionSelected)
+
+    if(startDivisionSelected > endDivisionSelected){
+        PriceDisplay.innerHTML = "0 ZŁ";
+    }
+    else{
+        if(startDivisionSelected == endDivisionSelected){
+
+        }
+    }
+}
+
+
 const changeDivisionTypeStart = () =>{
-    let divisionSelected = StartDivisionSelectType.value;
+    var divisionSelected = parseInt(StartDivisionSelectType.value);
 
     switch(divisionSelected){
-        case "Iron":{
+        case 1:{
             document.getElementById("start_div_img").src = "assets/img/Iron.png";
             document.getElementById("start_div_img").alt = "Iron";
             break;
         }
-        case "Bronze":{
+        case 2:{
             document.getElementById("start_div_img").src = "assets/img/Bronze.png";
             document.getElementById("start_div_img").alt = "Bronze";
             break;
         }
-        case "Silver":{
+        case 3:{
             document.getElementById("start_div_img").src = "assets/img/Silver.png";
             document.getElementById("start_div_img").alt = "Silver";
             break;
         }
-        case "Gold":{
+        case 4:{
             document.getElementById("start_div_img").src = "assets/img/Gold.png";
             document.getElementById("start_div_img").alt = "Gold";
             break;
         }
-        case "Platinum":{
+        case 5:{
             document.getElementById("start_div_img").src = "assets/img/Platinum.png";
             document.getElementById("start_div_img").alt = "Platinum";
             break;
         }
-        case "Diamond":{
+        case 6:{
             document.getElementById("start_div_img").src = "assets/img/Diamond.png";
             document.getElementById("start_div_img").alt = "Diamond";
             break;
         }
-        case "Master":{
+        case 7:{
             document.getElementById("start_div_img").src = "assets/img/Master.png";
             document.getElementById("start_div_img").alt = "Master";
             break;
         }
     }
+
+    calculatePrice();
 }
 
 StartDivisionSelectType.addEventListener('change', changeDivisionTypeStart);
 
 
 const changeDivisionTypeEnd = () =>{
-    let divisionSelected = EndDivisionSelectType.value;
+    var divisionSelected = parseInt(EndDivisionSelectType.value);
 
     switch(divisionSelected){
-        case "Iron":{
+        case 1:{
             document.getElementById("goal_div_img").src = "assets/img/Iron.png";
             document.getElementById("goal_div_img").alt = "Iron";
             break;
         }
-        case "Bronze":{
+        case 2:{
             document.getElementById("goal_div_img").src = "assets/img/Bronze.png";
             document.getElementById("goal_div_img").alt = "Bronze";
             break;
         }
-        case "Silver":{
+        case 3:{
             document.getElementById("goal_div_img").src = "assets/img/Silver.png";
             document.getElementById("goal_div_img").alt = "Silver";
             break;
         }
-        case "Gold":{
+        case 4:{
             document.getElementById("goal_div_img").src = "assets/img/Gold.png";
             document.getElementById("goal_div_img").alt = "Gold";
             break;
         }
-        case "Platinum":{
+        case 5:{
             document.getElementById("goal_div_img").src = "assets/img/Platinum.png";
             document.getElementById("goal_div_img").alt = "Platinum";
             break;
         }
-        case "Diamond":{
+        case 6:{
             document.getElementById("goal_div_img").src = "assets/img/Diamond.png";
             document.getElementById("goal_div_img").alt = "Diamond";
             break;
         }
-        case "Master":{
+        case 7:{
             document.getElementById("goal_div_img").src = "assets/img/Master.png";
-            document.getElementById("sgoal_div_img").alt = "Master";
+            document.getElementById("goal_div_img").alt = "Master";
             break;
         }
     }
+
+    calculatePrice();
 }
 
 EndDivisionSelectType.addEventListener('change', changeDivisionTypeEnd);
