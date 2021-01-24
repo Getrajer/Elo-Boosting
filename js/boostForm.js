@@ -20,7 +20,7 @@ const checkIfEmailCorrect = () => {
             EmailInputError.innerHTML = "Email nie jest poprawny!"
         }
         else{
-            
+            EmailInputError.innerHTML = ""
         }
         
     }
@@ -51,23 +51,30 @@ const checkIfEmailsMatch = () =>{
     else{
         ConfirmEmailError.innerHTML = "";
     }
-
-   
 }
 
 
 const calculatePrice = () =>{
-    let startDivisionSelected = parseInt(StartDivisionSelectType.value);
-    let endDivisionSelected = parseInt(EndDivisionSelectType.value);
+    let startDivisionTypeSelected = parseInt(StartDivisionSelectType.value);
+    let startDivisionValueSelected = parseInt(StartDivisionSelectValue);
 
-    console.log(startDivisionSelected + " | " + endDivisionSelected)
+    let endDivisionTypeSelected = parseInt(EndDivisionSelectType.value);
+    let endDivisionValueSelected = parseInt(EndDivisionSelectValue);
 
-    if(startDivisionSelected > endDivisionSelected){
+
+    console.log(startDivisionTypeSelected + " | " + endDivisionTypeSelected)
+
+    if(startDivisionTypeSelected > endDivisionTypeSelected){
         PriceDisplay.innerHTML = "0 ZŁ";
     }
     else{
-        if(startDivisionSelected == endDivisionSelected){
-
+        if(startDivisionTypeSelected == endDivisionTypeSelected){
+            if(startDivisionValueSelected >= endDivisionValueSelected){
+                PriceDisplay.innerHTML = "0 ZŁ";
+            }
+        }
+        else if(StartDivisionSelectType >= EndDivisionSelectType){
+            
         }
     }
 }
@@ -167,3 +174,14 @@ const changeDivisionTypeEnd = () =>{
 EndDivisionSelectType.addEventListener('change', changeDivisionTypeEnd);
 
 
+const selectValueFirstChange = () =>{
+    calculatePrice();
+}
+
+
+const selectValueSecondChange = () =>{
+    calculatePrice();
+}
+
+StartDivisionSelectValue.addEventListener('change', selectValueFirstChange);
+EndDivisionSelectValue.addEventListener('change', selectValueSecondChange);

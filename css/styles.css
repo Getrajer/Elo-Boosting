@@ -10818,7 +10818,7 @@ body {
   width: 100%;
   max-width: 1200px;
   background-color: #2e0e21c7;
-  padding: 3em 0;
+  padding: 6em 0;
   color: white;
 }
 
@@ -10852,6 +10852,7 @@ body {
 .elo_boosting_form h3{
   padding: 1em 0;
   font-weight: 600;
+  height: 100px;
 }
 
 .elo_boosting_form .less_lp{
@@ -10971,4 +10972,56 @@ body {
   outline: unset;
 }
 
+@media screen and (max-width: 900px){
+
+  .elo_boosting_form .elo_boosting_form_container{
+    width: 100%;
+    max-width: 600px;
+  }
+  
+
+  .elo_boosting_form .form_split{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 500px){
+
+  .elo_boosting_form .elo_boosting_form_container{
+    width: 100%;
+    max-width: 450px;
+  }
+
+  .elo_boosting_form .diwizje{
+    grid-template-columns: 1fr;
+  }
+  
+  .elo_boosting_form .less_lp{
+    grid-column: span 1;
+  }
+
+  .elo_boosting_form .form_box{
+    grid-template-columns: 1fr;
+  }
+
+  .elo_boosting_form .form_box label{
+    display: block;
+  }
+
+  .elo_boosting_form .form_box input{
+    display: block;
+  }
+
+  .elo_boosting_form .form_box .error{
+    grid-column: span 1;
+  }
+
+  .elo_boosting_form .button_box{
+    grid-column: span 1;
+  }
+}
+
+
 /*End of Form Elo Boost*/
+
