@@ -56,25 +56,31 @@ const checkIfEmailsMatch = () =>{
 
 const calculatePrice = () =>{
     let startDivisionTypeSelected = parseInt(StartDivisionSelectType.value);
-    let startDivisionValueSelected = parseInt(StartDivisionSelectValue);
+    let startDivisionValueSelected = parseInt(StartDivisionSelectValue.value);
 
     let endDivisionTypeSelected = parseInt(EndDivisionSelectType.value);
-    let endDivisionValueSelected = parseInt(EndDivisionSelectValue);
+    let endDivisionValueSelected = parseInt(EndDivisionSelectValue.value);
 
 
     console.log(startDivisionTypeSelected + " | " + endDivisionTypeSelected)
+    console.log(startDivisionValueSelected + " | " + endDivisionValueSelected)
+
 
     if(startDivisionTypeSelected > endDivisionTypeSelected){
         PriceDisplay.innerHTML = "0 ZŁ";
     }
     else{
-        if(startDivisionTypeSelected == endDivisionTypeSelected){
-            if(startDivisionValueSelected >= endDivisionValueSelected){
-                PriceDisplay.innerHTML = "0 ZŁ";
+        switch(startDivisionTypeSelected){
+            case 1:{
+                
+                switch(endDivisionTypeSelected){
+                    case 1:{
+                        let price = (endDivisionValueSelected - startDivisionValueSelected) * 15;
+                        PriceDisplay.innerHTML = price + " ZŁ";
+                    }
+                }
+
             }
-        }
-        else if(StartDivisionSelectType >= EndDivisionSelectType){
-            
         }
     }
 }
