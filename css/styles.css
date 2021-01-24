@@ -10812,6 +10812,7 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  
 }
 
 .elo_boosting_form .elo_boosting_form_container{
@@ -10820,6 +10821,9 @@ body {
   background-color: #2e0e21c7;
   padding: 6em 0;
   color: white;
+  border-top: 25px solid #2e0e21;
+  border-bottom: 25px solid #2e0e21;
+  
 }
 
 .elo_boosting_form .title{
