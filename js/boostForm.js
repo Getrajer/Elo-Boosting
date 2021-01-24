@@ -77,6 +77,16 @@ const calculatePrice = () =>{
                     case 1:{
                         let price = (endDivisionValueSelected - startDivisionValueSelected) * 15;
                         PriceDisplay.innerHTML = price + " ZŁ";
+                        break;
+                    }
+                    case 2:{
+                        console.log(endDivisionValueSelected);
+                        let price = 20 + ((4 - startDivisionValueSelected) * 15);
+                        if(endDivisionValueSelected != 1){
+                            price += (endDivisionValueSelected - 1) * 18;
+                        }
+                        PriceDisplay.innerHTML = price + " ZŁ";
+                        break;
                     }
                 }
 
