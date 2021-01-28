@@ -7,15 +7,25 @@ const StartDivisionSelectType = document.getElementById("startDivision");
 const StartDivisionSelectValue = document.getElementById("startDivisionSelectValue");
 const EndDivisionSelectType = document.getElementById("goalDivision");
 const EndDivisionSelectValue = document.getElementById("endDivisionSelectValue");
+const LessLPElement = document.getElementById("lessLP");
+
 
 const LessLPModifier = 15;
-
 const IronDivPrice = 15;
 const IronDivPromoPrice = 20;
 const BronzeDivPrice = 18;
 const BronzeDivPromoPrice = 23;
 const SilverDivPrice = 24;
 const SilverDivPromoPrice = 30;
+const GoldDivPrice = 34;
+const GoldDivPromoPrice = 40;
+const PlatinumDivPrice = 45;
+const PlatinumDivPromoPrice = 75;
+const D4D3Price = 100;
+const D3D2Price = 130;
+const D2D1Price = 150;
+const MasterPrice = 300;
+
 
 const reEmail = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -68,7 +78,7 @@ const calculatePrice = () =>{
     let endDivisionTypeSelected = parseInt(EndDivisionSelectType.value);
     let endDivisionValueSelected = parseInt(EndDivisionSelectValue.value);
 
-    let ifLessLP = document.getElementById("lessLP").value;
+    let ifLessLP = document.getElementById("lessLP");
 
     console.log(startDivisionTypeSelected + " | " + endDivisionTypeSelected)
     console.log(startDivisionValueSelected + " | " + endDivisionValueSelected)
@@ -87,7 +97,7 @@ const calculatePrice = () =>{
 
     }
 
-    if(startDivisionTypeSelected >= endDivisionTypeSelected && endDivisionValueSelected == 1){
+    if(startDivisionTypeSelected >= endDivisionTypeSelected && endDivisionValueSelected == 4){
         PriceDisplay.innerHTML = "0 ZŁ";
         
     }
@@ -96,79 +106,78 @@ const calculatePrice = () =>{
             case 1:{
                 switch(endDivisionTypeSelected){
                     case 1:{
-                        price = (endDivisionValueSelected - startDivisionValueSelected) * 15;
+                        price = (startDivisionValueSelected - endDivisionValueSelected) * IronDivPrice;
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 2:{
-                        price = 20 + ((4 - startDivisionValueSelected) * 15);
-                        if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 18;
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        if(endDivisionValueSelected != 4){
+                            price += (4 - endDivisionValueSelected) * BronzeDivPrice;
                         }
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 3:{
-                        price = 20 + ((4 - startDivisionValueSelected) * 15);
-                        price += 23 + (3 * 18);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
                         
-                        if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 24;
+                        if(endDivisionValueSelected != 4){
+                            price += (endDivisionValueSelected - 1) * SilverDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 4:{
-                        price = 20 + ((4 - startDivisionValueSelected) * 15);
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
 
-                        if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 34;
+                        if(endDivisionValueSelected != 4){
+                            price += (endDivisionValueSelected - 1) * GoldDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 5:{
-                        price = 20 + ((4 - startDivisionValueSelected) * 15);
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
 
                         if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 45;
+                            price += (endDivisionValueSelected - 4) * PlatinumDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 6:{
-                        price = 20 + ((4 - startDivisionValueSelected) * 15);
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
+                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
 
-                        if(endDivisionValueSelected != 1){
-                            if(endDivisionValueSelected === 2) {price += 100;}
-                            if(endDivisionValueSelected === 3) {price += 100 + 130;}
-                            if(endDivisionValueSelected === 4) {price += 100 + 130 + 150;}
+                        if(endDivisionValueSelected != 4){
+                            if(endDivisionValueSelected === 3) {price += D4D3Price;}
+                            if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
+                            if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 7:{
-                        price = 20 + ((4 - startDivisionValueSelected) * 15);
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
-                        price += 100 + 130 + 150;
-                        price += 300;
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
+                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
+                        price += D4D3Price + D3D2Price + D2D1Price;
+                        price += MasterPrice;
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         
@@ -182,69 +191,72 @@ const calculatePrice = () =>{
             case 2:{
                 switch(endDivisionTypeSelected){
                     case 2:{
-                        if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 18;
+                        if(endDivisionValueSelected != 4){
+                            price += (4 - endDivisionValueSelected) * BronzeDivPrice;
                         }
-                        console.log("dsadsa");
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 3:{
-                        price += 23 + (3 * 18);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
                         
-                        if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 24;
+                        if(endDivisionValueSelected != 4){
+                            price += (endDivisionValueSelected - 1) * SilverDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 4:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
 
-                        if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 34;
+                        if(endDivisionValueSelected != 4){
+                            price += (endDivisionValueSelected - 1) * GoldDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 5:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
 
                         if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 45;
+                            price += (endDivisionValueSelected - 4) * PlatinumDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 6:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
+                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
 
-                        if(endDivisionValueSelected != 1){
-                            if(endDivisionValueSelected === 2) {price += 100;}
-                            if(endDivisionValueSelected === 3) {price += 100 + 130;}
-                            if(endDivisionValueSelected === 4) {price += 100 + 130 + 150;}
+                        if(endDivisionValueSelected != 4){
+                            if(endDivisionValueSelected === 3) {price += D4D3Price;}
+                            if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
+                            if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 7:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
-                        price += 100 + 130 + 150;
-                        price += 300;
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
+                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
+                        price += D4D3Price + D3D2Price + D2D1Price;
+                        price += MasterPrice;
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         
@@ -258,59 +270,62 @@ const calculatePrice = () =>{
             case 3:{
                 switch(endDivisionTypeSelected){
                     case 3:{
-                        if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 24;
+                        if(endDivisionValueSelected != 4){
+                            price += (endDivisionValueSelected - 1) * SilverDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 4:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
 
-                        if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 34;
+                        if(endDivisionValueSelected != 4){
+                            price += (endDivisionValueSelected - 1) * GoldDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 5:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
 
                         if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 45;
+                            price += (endDivisionValueSelected - 4) * PlatinumDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 6:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
+                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
 
-                        if(endDivisionValueSelected != 1){
-                            if(endDivisionValueSelected === 2) {price += 100;}
-                            if(endDivisionValueSelected === 3) {price += 100 + 130;}
-                            if(endDivisionValueSelected === 4) {price += 100 + 130 + 150;}
+                        if(endDivisionValueSelected != 4){
+                            if(endDivisionValueSelected === 3) {price += D4D3Price;}
+                            if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
+                            if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 7:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
-                        price += 100 + 130 + 150;
-                        price += 300;
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
+                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
+                        price += D4D3Price + D3D2Price + D2D1Price;
+                        price += MasterPrice;
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         
@@ -324,48 +339,50 @@ const calculatePrice = () =>{
             case 4:{
                 switch(endDivisionTypeSelected){
                     case 4:{
-                        if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 34;
+                        if(endDivisionValueSelected != 4){
+                            price += (endDivisionValueSelected - 1) * GoldDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 5:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
 
                         if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 45;
+                            price += (endDivisionValueSelected - 4) * PlatinumDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 6:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
+                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
 
-                        if(endDivisionValueSelected != 1){
-                            if(endDivisionValueSelected === 2) {price += 100;}
-                            if(endDivisionValueSelected === 3) {price += 100 + 130;}
-                            if(endDivisionValueSelected === 4) {price += 100 + 130 + 150;}
+                        if(endDivisionValueSelected != 4){
+                            if(endDivisionValueSelected === 3) {price += D4D3Price;}
+                            if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
+                            if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 7:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
-                        price += 100 + 130 + 150;
-                        price += 300;
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
+                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
+                        price += D4D3Price + D3D2Price + D2D1Price;
+                        price += MasterPrice;
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         
@@ -380,34 +397,36 @@ const calculatePrice = () =>{
                 switch(endDivisionTypeSelected){
                     case 5:{
                         if(endDivisionValueSelected != 1){
-                            price += (endDivisionValueSelected - 1) * 45;
+                            price += (endDivisionValueSelected - 4) * PlatinumDivPrice;
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 6:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
+                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
 
-                        if(endDivisionValueSelected != 1){
-                            if(endDivisionValueSelected === 2) {price += 100;}
-                            if(endDivisionValueSelected === 3) {price += 100 + 130;}
-                            if(endDivisionValueSelected === 4) {price += 100 + 130 + 150;}
+                        if(endDivisionValueSelected != 4){
+                            if(endDivisionValueSelected === 3) {price += D4D3Price;}
+                            if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
+                            if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 7:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
-                        price += 100 + 130 + 150;
-                        price += 300;
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
+                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
+                        price += D4D3Price + D3D2Price + D2D1Price;
+                        price += MasterPrice;
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         
@@ -421,23 +440,24 @@ const calculatePrice = () =>{
             case 6:{
                 switch(endDivisionTypeSelected){
                     case 6:{
-                        if(endDivisionValueSelected != 1){
-                            if(endDivisionValueSelected === 2) {price += 100;}
-                            if(endDivisionValueSelected === 3) {price += 100 + 130;}
-                            if(endDivisionValueSelected === 4) {price += 100 + 130 + 150;}
+                        if(endDivisionValueSelected != 4){
+                            if(endDivisionValueSelected === 3) {price += D4D3Price;}
+                            if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
+                            if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         break;
                     }
                     case 7:{
-                        price += 23 + (3 * 18);
-                        price += 30 + (3 * 24);
-                        price += 40 + (3 * 34);
-                        price += 75 + (3 * 45);
-                        price += 100 + 130 + 150;
-                        price += 300;
-                        
+                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
+                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
+                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
+                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
+                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
+                        price += D4D3Price + D3D2Price + D2D1Price;
+                        price += MasterPrice;
+
                         PriceDisplay.innerHTML = price + " ZŁ";
                         
                         document.getElementById("endDivisionSelectValue").style.display = "none";
@@ -448,14 +468,17 @@ const calculatePrice = () =>{
                 break;
             }
             case 7:{
-                PriceDisplay.innerHTML = 0 + " ZŁ";
-                document.getElementById("endDivisionSelectValue").style.display = "none";
-                document.getElementById("startDivisionSelectValue").style.display = "none";
-                break;
+                if(startDivisionTypeSelected == 7){
+                    document.getElementById("startDivisionSelectValue").style.display = "none";
+                }
+            
+                if(endDivisionTypeSelected == 7){
+                    document.getElementById("endDivisionSelectValue").style.display = "none";
+                }
             }
         }
 
-        if(ifLessLP == "on"){
+        if(ifLessLP.checked == true){
             price += Math.round((price * LessLPModifier / 100));
         }
         PriceDisplay.innerHTML = price + " ZŁ";
@@ -568,3 +591,9 @@ const selectValueSecondChange = () =>{
 
 StartDivisionSelectValue.addEventListener('change', selectValueFirstChange);
 EndDivisionSelectValue.addEventListener('change', selectValueSecondChange);
+
+const lessLPHappened = () =>{
+    calculatePrice();
+}
+
+LessLPElement.addEventListener('change', lessLPHappened);
