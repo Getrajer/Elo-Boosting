@@ -108,7 +108,7 @@ const calculatePrice = () =>{
                     case 1:{
                         price = (startDivisionValueSelected - endDivisionValueSelected) * IronDivPrice;
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 2:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -116,7 +116,7 @@ const calculatePrice = () =>{
                             price += (4 - endDivisionValueSelected) * BronzeDivPrice;
                         }
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 3:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -127,7 +127,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 4:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -139,7 +139,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 5:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -152,7 +152,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 6:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -168,7 +168,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 7:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -183,7 +183,7 @@ const calculatePrice = () =>{
                         
                         document.getElementById("endDivisionSelectValue").style.display = "none";
 
-                        break;
+                        return price;
                     }
                 }
                 break;
@@ -195,7 +195,7 @@ const calculatePrice = () =>{
                             price += (4 - endDivisionValueSelected) * BronzeDivPrice;
                         }
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 3:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -206,7 +206,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 4:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -218,7 +218,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 5:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -231,7 +231,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 6:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -247,7 +247,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 7:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -262,7 +262,7 @@ const calculatePrice = () =>{
                         
                         document.getElementById("endDivisionSelectValue").style.display = "none";
 
-                        break;
+                        return price;
                     }
                 }
                 break;
@@ -275,7 +275,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 4:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -287,7 +287,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 5:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -300,7 +300,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 6:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -316,7 +316,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 7:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -331,7 +331,7 @@ const calculatePrice = () =>{
                         
                         document.getElementById("endDivisionSelectValue").style.display = "none";
 
-                        break;
+                        return price;
                     }
                 }
                 break;
@@ -344,7 +344,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 5:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -357,7 +357,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 6:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -373,7 +373,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 7:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -388,7 +388,7 @@ const calculatePrice = () =>{
                         
                         document.getElementById("endDivisionSelectValue").style.display = "none";
 
-                        break;
+                        return price;
                     }
                 }
                 break;
@@ -401,7 +401,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 6:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -417,7 +417,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 7:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -432,7 +432,7 @@ const calculatePrice = () =>{
                         
                         document.getElementById("endDivisionSelectValue").style.display = "none";
 
-                        break;
+                        return price;
                     }
                 }
                 break;
@@ -447,7 +447,7 @@ const calculatePrice = () =>{
                         }
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        break;
+                        return price;
                     }
                     case 7:{
                         price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
@@ -461,8 +461,7 @@ const calculatePrice = () =>{
                         PriceDisplay.innerHTML = price + " ZŁ";
                         
                         document.getElementById("endDivisionSelectValue").style.display = "none";
-
-                        break;
+                        return price;
                     }
                 }
                 break;
@@ -597,3 +596,79 @@ const lessLPHappened = () =>{
 }
 
 LessLPElement.addEventListener('change', lessLPHappened);
+
+
+
+async function getAccess(){
+	const response = await fetch("https://api-m.sandbox.paypal.com/v1/oauth2/token", {
+		method: 'post',
+		headers:{
+			"Content-Type": "application/x-www-form-urlencoded",
+			"Authorization": "Basic " + "QVlTa2h4LWFZR3JCcHlwdEpNdWJNV2dsNzI4SUpwenRGT1NqYmVESndRb0lnRDR0VV8yYTFRTkNzZU83d0VCUDY0TWJsZWwzRGJfZkRVRmY6RU8tOHRlbVJmYXNxckVfczZxTWR2VlZxdFZJRDJfeWdtX3ZoSUZPTlpEUEEyclBMYWZIcTN2ODhmUVB3ZjVQRTVtMnpGTmNQTXAtdmVzZ2c="
+		},
+		body: "grant_type=client_credentials"
+	});
+
+	const ret = await response.json();
+	return ret;
+}
+
+async function order(token, item, amount){
+	var orderObj = {
+		"intent": "CAPTURE",
+		"application_context": {
+		"return_url": "https://www.google.com/",
+		"cancel_url": "https://kubaowczarek1.wixsite.com/mysite",
+		"landing_page": "BILLING",
+		"payment_method": {
+		"payee_preferred": "IMMEDIATE_PAYMENT_REQUIRED"
+				}
+			},
+		"purchase_units": [
+				{
+		"description": item,
+		"amount": {
+		"currency_code": "PLN",
+		"value": Number(amount),
+		"breakdown": {
+		"item_total": {
+		"currency_code": "PLN",
+		"value": Number(amount)
+				}
+			}
+		},
+		"items": [{
+		"name": "Item Name - " + item,
+		"unit_amount": {
+		"currency_code": "PLN",
+		"value": Number(amount)
+		},
+		"quantity": "1"
+        }]
+        }
+    ]
+    };
+ const response = await fetch("https://api.sandbox.paypal.com/v2/checkout/orders", {
+    method: 'post',
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer " + token
+    },
+    body: JSON.stringify(orderObj)
+    });
+ const ret = await response.json();
+ return ret;
+}
+
+async function capturePayment(url) {
+ const response = await fetch(`${url}`, {
+    method: 'post',
+    headers: {
+			"Content-Type": "application/json",
+			"Authorization": "Basic" + "QVlTa2h4LWFZR3JCcHlwdEpNdWJNV2dsNzI4SUpwenRGT1NqYmVESndRb0lnRDR0VV8yYTFRTkNzZU83d0VCUDY0TWJsZWwzRGJfZkRVRmY6RU8tOHRlbVJmYXNxckVfczZxTWR2VlZxdFZJRDJfeWdtX3ZoSUZPTlpEUEEyclBMYWZIcTN2ODhmUVB3ZjVQRTVtMnpGTmNQTXAtdmVzZ2c="
+		}
+    });
+ const ret = await response.json();
+ return ret;
+}
+
