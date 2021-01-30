@@ -107,6 +107,8 @@ const calculatePrice = () =>{
                 switch(endDivisionTypeSelected){
                     case 1:{
                         price = (startDivisionValueSelected - endDivisionValueSelected) * IronDivPrice;
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
+
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
                     }
@@ -115,6 +117,8 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 4){
                             price += (4 - endDivisionValueSelected) * BronzeDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
+
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
                     }
@@ -125,6 +129,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 4){
                             price += (endDivisionValueSelected - 1) * SilverDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -137,6 +142,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 4){
                             price += (endDivisionValueSelected - 1) * GoldDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -150,6 +156,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 1){
                             price += (endDivisionValueSelected - 4) * PlatinumDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -166,6 +173,7 @@ const calculatePrice = () =>{
                             if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
                             if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -178,6 +186,7 @@ const calculatePrice = () =>{
                         price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
                         price += D4D3Price + D3D2Price + D2D1Price;
                         price += MasterPrice;
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         
@@ -194,6 +203,8 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 4){
                             price += (4 - endDivisionValueSelected) * BronzeDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
+
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
                     }
@@ -204,6 +215,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 4){
                             price += (endDivisionValueSelected - 1) * SilverDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -216,6 +228,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 4){
                             price += (endDivisionValueSelected - 1) * GoldDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -229,6 +242,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 1){
                             price += (endDivisionValueSelected - 4) * PlatinumDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -245,6 +259,7 @@ const calculatePrice = () =>{
                             if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
                             if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -257,6 +272,7 @@ const calculatePrice = () =>{
                         price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
                         price += D4D3Price + D3D2Price + D2D1Price;
                         price += MasterPrice;
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         
@@ -273,6 +289,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 4){
                             price += (endDivisionValueSelected - 1) * SilverDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -285,6 +302,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 4){
                             price += (endDivisionValueSelected - 1) * GoldDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -298,6 +316,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 1){
                             price += (endDivisionValueSelected - 4) * PlatinumDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -314,6 +333,7 @@ const calculatePrice = () =>{
                             if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
                             if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -326,6 +346,7 @@ const calculatePrice = () =>{
                         price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
                         price += D4D3Price + D3D2Price + D2D1Price;
                         price += MasterPrice;
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         
@@ -342,6 +363,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 4){
                             price += (endDivisionValueSelected - 1) * GoldDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -355,6 +377,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 1){
                             price += (endDivisionValueSelected - 4) * PlatinumDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -371,6 +394,7 @@ const calculatePrice = () =>{
                             if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
                             if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -383,6 +407,7 @@ const calculatePrice = () =>{
                         price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
                         price += D4D3Price + D3D2Price + D2D1Price;
                         price += MasterPrice;
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         
@@ -399,6 +424,7 @@ const calculatePrice = () =>{
                         if(endDivisionValueSelected != 1){
                             price += (endDivisionValueSelected - 4) * PlatinumDivPrice;
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -415,6 +441,7 @@ const calculatePrice = () =>{
                             if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
                             if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
@@ -427,9 +454,9 @@ const calculatePrice = () =>{
                         price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
                         price += D4D3Price + D3D2Price + D2D1Price;
                         price += MasterPrice;
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        
                         document.getElementById("endDivisionSelectValue").style.display = "none";
 
                         return price;
@@ -445,7 +472,8 @@ const calculatePrice = () =>{
                             if(endDivisionValueSelected === 2) {price += D4D3Price + D3D2Price;}
                             if(endDivisionValueSelected === 1) {price += D4D3Price + D3D2Price + D2D1Price;}
                         }
-
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
+                        
                         PriceDisplay.innerHTML = price + " ZŁ";
                         return price;
                     }
@@ -457,9 +485,9 @@ const calculatePrice = () =>{
                         price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
                         price += D4D3Price + D3D2Price + D2D1Price;
                         price += MasterPrice;
+                        if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
                         PriceDisplay.innerHTML = price + " ZŁ";
-                        
                         document.getElementById("endDivisionSelectValue").style.display = "none";
                         return price;
                     }
@@ -477,10 +505,7 @@ const calculatePrice = () =>{
             }
         }
 
-        if(ifLessLP.checked == true){
-            price += Math.round((price * LessLPModifier / 100));
-        }
-        PriceDisplay.innerHTML = price + " ZŁ";
+        
     }
 }
 
