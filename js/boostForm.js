@@ -97,9 +97,20 @@ const calculatePrice = () =>{
 
     }
 
-    if(startDivisionTypeSelected >= endDivisionTypeSelected && endDivisionValueSelected == 4){
+    console.log(startDivisionValueSelected + "|" +  endDivisionTypeSelected + "|" + startDivisionValueSelected + "|" + endDivisionValueSelected);
+    console.log(startDivisionTypeSelected == endDivisionTypeSelected && endDivisionValueSelected < startDivisionValueSelected);
+    console.log(startDivisionTypeSelected == endDivisionTypeSelected);
+    console.log(endDivisionValueSelected < startDivisionValueSelected);
+
+
+
+    if(startDivisionTypeSelected > endDivisionTypeSelected){
         PriceDisplay.innerHTML = "0 ZŁ";
-        
+        return 0;
+    }
+    else if(startDivisionTypeSelected == endDivisionTypeSelected && endDivisionValueSelected > startDivisionValueSelected){
+        PriceDisplay.innerHTML = "0 ZŁ";
+        return 0;
     }
     else{
         switch(startDivisionTypeSelected){
