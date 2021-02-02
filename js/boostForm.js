@@ -489,12 +489,6 @@ const calculatePrice = () =>{
                         return price;
                     }
                     case 7:{
-                        price = IronDivPromoPrice + ((startDivisionValueSelected - 1) * IronDivPrice);
-                        price += BronzeDivPromoPrice + (3 * BronzeDivPrice);
-                        price += SilverDivPromoPrice + (3 * SilverDivPrice);
-                        price += GoldDivPromoPrice + (3 * GoldDivPrice);
-                        price += PlatinumDivPromoPrice + (3 * PlatinumDivPrice);
-                        price += D4D3Price + D3D2Price + D2D1Price;
                         price += MasterPrice;
                         if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
 
