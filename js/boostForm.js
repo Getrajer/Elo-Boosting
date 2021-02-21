@@ -108,7 +108,7 @@ const calculatePrice = () =>{
         PriceDisplay.innerHTML = "0 ZŁ";
         return 0;
     }
-    else if(startDivisionTypeSelected == endDivisionTypeSelected && endDivisionValueSelected > startDivisionValueSelected){
+    else if(startDivisionTypeSelected == endDivisionTypeSelected && endDivisionValueSelected >= startDivisionValueSelected){
         PriceDisplay.innerHTML = "0 ZŁ";
         return 0;
     }
