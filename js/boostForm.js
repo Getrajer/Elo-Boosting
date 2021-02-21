@@ -472,8 +472,24 @@ const calculatePrice = () =>{
                         return price;
                     }
                     case 7:{
-                        price = PlatinumDivPromoPrice + ((startDivisionValueSelected - 1) * PlatinumDivPrice)
-                        price += D4D3Price + D3D2Price + D2D1Price;
+                        switch(startDivisionValueSelected){
+                            case 4:{
+                                price = D4D3Price + D3D2Price + D2D1Price;
+                                break;
+                            }
+                            case 3:{
+                                price = D3D2Price + D2D1Price;
+                                break;
+                            }
+                            case 2:{
+                                price = D2D1Price;
+                                break;
+                            }
+                            case 1:{
+                                price = 0;
+                                break;
+                            }
+                        }
                         price += MasterPrice;
 
                         if(ifLessLP.checked == true){price += Math.round((price * LessLPModifier / 100));}
